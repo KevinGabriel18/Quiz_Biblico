@@ -18,61 +18,51 @@ List<Question> questions = [
 Question(
     'A Bíblia quantos livros?',
     '66',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['66', '45', '64'],
   ),
   Question(
     'Quantos evangelhos existem no Novo Testamento?',
     '4',
-    'https://t4.ftcdn.net/jpg/05/29/98/25/360_F_529982581_VkEiHVfd8kNM0H73cUw9VwDWyyP9BSxf.png',
     ['3', '4', '5'],
   ),
   Question(
     'Quem foi lançado na cova dos leões?',
     'Daniel',
-    'https://static.vecteezy.com/system/resources/previews/027/765/346/non_2x/quiz-sign-mark-free-free-png.png',
     ['Daniel', 'Elias', 'Jonas'],
   ),
   Question(
     'Quem construiu a arca?',
     'Noé',
-    'https:https://png.pngtree.com/png-clipart/20231005/original/pngtree-quiz-questions-answers-vector-png-image_13279607.png',
     ['Noé', 'Moisés', 'Abraão'],
   ),
   Question(
     'Quem foi o primeiro rei de Israel?',
     'Saul',
-    'https://www.pngitem.com/pimgs/m/79-795013_quiz-icon-png-transparent-png.png',
     ['Saul', 'Davi', 'Salomão'],
   ),
   Question(
     'Qual é o menor versículo da Bíblia?',
     'Jesus chorou.',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['Jesus chorou.', 'No princípio, Deus criou os céus e a terra.', 'E disse Deus: Haja luz.'],
   ),
   Question(
     'Quem foi engolido por um grande peixe?',
     'Jonas',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['Jonas', 'Pedro', 'Paulo'],
   ),
   Question(
     'Quem recebeu as tábuas dos Dez Mandamentos?',
     'Moisés',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['Moisés', 'Abraão', 'Isaac'],
   ),
   Question(
     'Qual livro da Bíblia vem depois de João?',
     'Atos',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['Atos', 'Romanos', 'Gálatas'],
   ),
   Question(
     'Quem foi o homem mais forte da Bíblia?',
     'Sansão',
-    'https://png.pngtree.com/png-clipart/20230811/original/pngtree-comic-speech-bubbles-with-text-quiz-picture-image_7868432.png',
     ['Sansão', 'Davi', 'Golias'],
   ),
 
@@ -115,9 +105,14 @@ crossAxisAlignment: CrossAxisAlignment.stretch,
 children: [
 Expanded(
 flex: 3,
-child: Image.network(
-     questions[questionIndex].imageUrl,
-fit: BoxFit.contain,
+child: DecoratedBox(
+  decoration: BoxDecoration(
+  image: DecorationImage(
+    image: AssetImage(
+     'assets/images/fundo.png'),
+fit: BoxFit.cover,
+    )
+  )
 ),
 ),
 Expanded(
@@ -165,8 +160,7 @@ onPressed: () =>resetquiz(),
 class Question {
 final String questionText;
 final String answer;
-final String imageUrl;
 final List<String> options;
 
-Question(this.questionText, this.answer, this.imageUrl, this.options);
+Question(this.questionText, this.answer, this.options);
 }
