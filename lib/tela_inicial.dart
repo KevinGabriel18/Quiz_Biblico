@@ -15,6 +15,7 @@ class TelaInicial extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Column(
+            
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
@@ -33,13 +34,37 @@ class TelaInicial extends StatelessWidget {
                       ),
                   child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.brown,
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       padding: const EdgeInsets.all(20),
                       child: const Center(
                         child: Text(
-                          'Iniciar',
+                          'INICIAR',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ))),
+                      SizedBox(height: 20), 
+                      GestureDetector(
+                  onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Quizpage(),
+                        ),
+                      ),
+                  child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      child: const Center(
+                        child: Text(
+                          'CREDITOS',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,

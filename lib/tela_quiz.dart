@@ -97,61 +97,20 @@ score = 0;
 @override
 Widget build(BuildContext context) {
 return Scaffold(
-appBar: AppBar(title: Text('Quiz',style: TextStyle(fontSize: 25.0),),
-centerTitle: true,
-),
-body: Column(
-crossAxisAlignment: CrossAxisAlignment.stretch,
-children: [
-Expanded(
-flex: 3,
-child: DecoratedBox(
+// appBar: AppBar(title: Text('',style: TextStyle(fontSize: 25.0),),
+// centerTitle: true,
+// ),
+body: Center(
+child: Container(
   decoration: BoxDecoration(
   image: DecorationImage(
     image: AssetImage(
      'assets/images/fundo.png'),
 fit: BoxFit.cover,
-    )
-  )
-),
-),
-Expanded(
-flex: 7,
-child: Center(
-child: Text(
-questions[questionIndex].questionText,
-textAlign: TextAlign.center,
-style: TextStyle(fontSize: 24.0,),
-),
-),
-),
 
-Wrap(
-alignment: WrapAlignment.center,
-spacing: 8.0,
-runSpacing: 8.0,
-children: questions[questionIndex].options.map((option) {
-return ElevatedButton(
-onPressed: () => checkAnswer(option),
-child: Text(option),
-);
-}).toList(),
+    ),
+  ),
 ),
-
-
-
-Container(
-padding: EdgeInsets.symmetric(vertical: 16.0),
-child: Text(
-'Pontuação: $score / ${questions.length}',
-textAlign: TextAlign.center,
-style: TextStyle(fontSize: 20.0),
-),
-), ElevatedButton(
-child: Text('resetar'),
-onPressed: () =>resetquiz(),
-),
-],
 ),
 );
 }
